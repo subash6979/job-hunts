@@ -17,6 +17,7 @@ def home(request):
 
 @require_http_methods(["GET"])
 def jobs(request):
+    seed_jobs_from_json()
     queryset = Job.objects.all()
     search = request.GET.get("q", "").strip()
     country = request.GET.get("country", "").strip()
