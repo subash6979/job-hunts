@@ -1,0 +1,82 @@
+[
+    {
+        "id": 1,
+        "title": "Software Engineer",
+        "company": "Tech Innovations Inc.",
+        "location": "New York, NY",
+        "description": "We are looking for a Software Engineer to join our team. You will be responsible for developing high-quality software solutions.",
+        "requirements": [
+            "Bachelor's degree in Computer Science or related field",
+            "Proficiency in JavaScript, HTML, and CSS",
+            "Experience with React or Angular",
+            "Strong problem-solving skills"
+        ],
+        "salary": "$80,000 - $100,000",
+        "postedDate": "2026-09-01",
+        "applyLink": "https://www.techinnovations.com/careers/software-engineer"
+    },
+    {
+        "id": 2,
+        "title": "Product Manager",
+        "company": "Creative Solutions Ltd.",
+        "location": "San Francisco, CA",
+        "description": "Seeking a Product Manager to lead product development and strategy. You will work closely with cross-functional teams.",
+        "requirements": [
+            "3+ years of experience in product management",
+            "Strong analytical and communication skills",
+            "Experience with Agile methodologies",
+            "Ability to work in a fast-paced environment"
+        ],
+        "salary": "$90,000 - $120,000",
+        "postedDate": "2026-09-02",
+        "applyLink": "https://www.creativesolutions.com/careers/product-manager"
+    },
+    {
+        "id": 3,
+        "title": "UX/UI Designer",
+        "company": "Design Masters",
+        "location": "Remote",
+        "description": "Join our team as a UX/UI Designer. You will create user-friendly interfaces and improve user experience.",
+        "requirements": [
+            "Proven experience as a UX/UI Designer",
+            "Strong portfolio showcasing design skills",
+            "Proficiency in design tools like Sketch, Figma, or Adobe XD",
+            "Understanding of user-centered design principles"
+        ],
+        "salary": "$70,000 - $90,000",
+        "postedDate": "2026-09-03",
+        "applyLink": "https://www.designmasters.com/careers/ux-ui-designer"
+    },
+    {
+        "id": 4,
+        "title": "Data Analyst",
+        "company": "Data Insights Co.",
+        "location": "Chicago, IL",
+        "description": "We are looking for a Data Analyst to help us make data-driven decisions. You will analyze data and provide insights.",
+        "requirements": [
+            "Bachelor's degree in Data Science, Statistics, or related field",
+            "Experience with SQL and data visualization tools",
+            "Strong analytical skills",
+            "Ability to communicate findings effectively"
+        ],
+        "salary": "$65,000 - $85,000",
+        "postedDate": "2026-09-04",
+        "applyLink": "https://www.datainsights.com/careers/data-analyst"
+    },
+    {
+        "id": 5,
+        "title": "Marketing Specialist",
+        "company": "Marketing Gurus",
+        "location": "Austin, TX",
+        "description": "Join our marketing team as a Marketing Specialist. You will develop and implement marketing strategies.",
+        "requirements": [
+            "Bachelor's degree in Marketing or related field",
+            "Experience with digital marketing tools",
+            "Strong written and verbal communication skills",
+            "Ability to work collaboratively"
+        ],
+        "salary": "$50,000 - $70,000",
+        "postedDate": "2026-09-05",
+        "applyLink": "https://www.marketinggurus.com/careers/marketing-specialist"
+    }
+]

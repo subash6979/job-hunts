@@ -1,0 +1,9 @@
+document.addEventListener('DOMContentLoaded', async () => {
+    const id = new URLSearchParams(window.location.search).get('id');
+    const target = document.getElementById('job-detail');
+    if (!id) { target.innerHTML = '<h1>Choose a job to view details.</h1><a class="button" href="jobs.html">Back to jobs</a>'; return; }
+    const response = await fetch('/api/jobs/');
+    const job = (await response.json()).find(item => String(item.id) === id);
+    if (!job) { target.innerHTML = '<h1>This opportunity is no longer available.</h1><a class="button" href="jobs.html">Browse jobs</a>'; return; }
+    target.innerHTML = `<section style="padding:32px"><span class="tag">${job.companyVerified ? 'Verified employer' : 'Employer profile'}</span><h1>${job.title}</h1><p><strong>${job.company}</strong> · ${job.location}</p><div class="job-meta"><span class="tag">${job.workArrangement || 'On-site'}</span><span class="tag">${job.employmentType || 'Full-time'}</span><span class="tag">${job.experienceLevel || 'Mid level'}</span><span class="tag">${job.salary || 'Salary listed by employer'}</span></div><a class="button" href="login.html">Apply now</a></section><section style="margin-top:20px;padding:32px"><p class="eyebrow">About this role</p><h2>What you will do</h2><p>${job.description}</p><h2>Requirements for this level</h2><ul>${(job.requirements || []).map(requirement => `<li>${requirement}</li>`).join('')}</ul><h2>Benefits</h2><ul>${(job.benefits || []).map(benefit => `<li>${benefit}</li>`).join('')}</ul><h2>Match overview</h2><p>Complete your profile to see how your experience matches this role.</p></section>`;
+});

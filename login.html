@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JoB HUnts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <div class="container">
+        <p class="eyebrow">Welcome back</p><h1>Login to JoB HUnts</h1>
+        <p>One secure place for applications, interview updates, and offers.</p>
+        <button type="button" class="button" disabled>Google sign-in unavailable</button>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="register.html">Register here</a></p><small>Your email is never shown to employers until you apply.</small>
+        </form><p id="auth-message" role="alert"></p>
+    </div>
+    <script src="js/auth.js?v=2"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

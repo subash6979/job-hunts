@@ -1,0 +1,13 @@
+[
+  {"country":"Canada","cities":["Toronto","Vancouver","Montreal","Ottawa","Calgary","Edmonton"]},
+  {"country":"United States","cities":["New York","San Francisco","Seattle","Chicago","Austin","Boston","Los Angeles","Washington, DC"]},
+  {"country":"Nepal","cities":["Kathmandu","Lalitpur","Pokhara","Biratnagar","Bharatpur","Butwal"]},
+  {"country":"Japan","cities":["Tokyo","Osaka","Kyoto","Yokohama","Nagoya","Fukuoka"]},
+  {"country":"South Korea","cities":["Seoul","Busan","Incheon","Daegu","Daejeon","Jeju"]},
+  {"country":"Ireland","cities":["Dublin","Cork","Galway","Limerick","Waterford","Kilkenny"]},
+  {"country":"United Kingdom","cities":["London","Manchester","Birmingham","Edinburgh","Glasgow","Bristol","Leeds"]},
+  {"country":"Germany","cities":["Berlin","Munich","Hamburg","Frankfurt","Cologne","Dusseldorf","Stuttgart"]},
+  {"country":"India","cities":["Mumbai","Bengaluru","New Delhi","Hyderabad","Chennai","Pune","Kolkata"]},
+  {"country":"China","cities":["Beijing","Shanghai","Shenzhen","Guangzhou","Hangzhou","Chengdu","Hong Kong"]},
+  {"country":"Hong Kong","cities":["Central and Western","Wan Chai","Kowloon","Sha Tin","Tuen Mun"]}
+]

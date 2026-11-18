@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JoB HUnts - Job Listings</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/theme.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.svg" alt="JoB HUnts Logo">
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="companies.html">Companies</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <p class="eyebrow">Explore verified opportunities</p>
+        <h1>Find work that fits your life.</h1>
+        <div class="job-search">
+            <input id="search-input" type="search" placeholder="Role, skill, or company">
+            <select id="country-filter"><option value="">Any country</option></select>
+            <select id="location-filter"><option value="">Any city</option></select>
+            <select id="arrangement-filter"><option value="">Any work style</option><option value="remote">Remote</option><option value="hybrid">Hybrid</option><option value="on-site">On-site</option></select>
+            <select id="category-filter"><option value="">Any category</option><option>Skilled Trades</option><option>Transportation</option><option>Education</option><option>Hospitality &amp; Retail</option><option>Healthcare</option><option>IT &amp; Technology</option></select>
+            <button id="search-button" type="button">Search</button>
+        </div>
+        <div class="job-meta"><button class="tag quick-filter" data-type="full-time" type="button">Full-time</button><button class="tag quick-filter" data-type="part-time" type="button">Part-time</button><button class="tag quick-filter" data-type="internship" type="button">Internship</button><button class="tag quick-filter" data-type="entry-level" type="button">Entry level</button></div>
+        <div class="results-tools"><button id="saved-view" type="button">Saved jobs (0)</button><span>Personalized matches update as you build your profile.</span></div>
+        <p id="job-count" class="eyebrow"></p>
+        <div id="job-listings" class="job-listings">
+            <!-- Job postings will be dynamically inserted here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 JoB HUnts. All rights reserved.</p>
+    </footer>
+
+    <script src="js/jobs.js?v=2"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employer workspace - JoB HUnts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header><nav><a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="JoB HUnts Logo"></a><ul><li><a href="jobs.html">Talent search</a></li><li><a href="post-job.html">Post a role</a></li><li><a class="active" href="employer-dashboard.html">Employer workspace</a></li><li><a href="profile.html">Company profile</a></li></ul></nav></header>
+    <main>
+        <p class="eyebrow">Employer workspace</p>
+        <h1>Move the right people forward.</h1>
+        <section aria-labelledby="job-search-heading" style="margin: 28px 0 34px">
+            <p class="eyebrow">Directory search</p>
+            <h2 id="job-search-heading">Find jobs by title or country</h2>
+            <div class="job-search">
+                <input id="employer-job-search" type="search" placeholder="Search job title, skill, or company" aria-label="Search jobs">
+                <select id="employer-country-filter" aria-label="Filter jobs by country"><option value="">Any country</option></select>
+                <button id="employer-search-button" type="button">Search jobs</button>
+            </div>
+            <p id="employer-job-count" class="eyebrow" aria-live="polite"></p>
+            <div id="employer-job-listings" class="job-listings"></div>
+        </section>
+        <div class="dashboard-grid">
+            <section><p class="eyebrow">Hiring pipeline</p><h2>Open roles</h2><div class="card"><h3>Software Engineer</h3><p>New York, NY · 12 applicants</p><div class="job-meta"><span class="status">4 to review</span><span class="tag">Verified company</span></div><a class="button" href="#candidate-pipeline">Review candidates</a></div><div class="card"><h3>Product Manager</h3><p>San Francisco, CA · 8 applicants</p><div class="job-meta"><span class="status">2 interviews</span><span class="tag">Full-time</span></div><a class="button" href="#candidate-pipeline">Review candidates</a></div></section>
+            <section><p class="eyebrow">Trust center</p><h2>Company verified</h2><p>Your domain is verified. Candidates see this badge beside your roles and company profile.</p><div class="card"><strong>creative-solutions.com</strong><p>Domain check complete · Email notifications enabled</p></div><a class="button" href="profile.html">Manage company profile</a></section>
+        </div>
+        <section id="candidate-pipeline" style="margin-top:20px;padding:26px"><p class="eyebrow">Candidate review</p><h2>Keep every decision clear.</h2><div class="features"><div class="feature"><h3>Submitted</h3><p>7 candidates waiting for a first look.</p></div><div class="feature"><h3>Interview</h3><p>3 candidates have a conversation scheduled.</p></div><div class="feature"><h3>Offer</h3><p>1 offer is awaiting a response.</p></div></div></section>
+    </main>
+    <footer><p>&copy; 2026 JoB HUnts. Hiring with more clarity.</p></footer>
+<script src="js/menu.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/employer-dashboard.js?v=1"></script>
+</body>
+</html>
