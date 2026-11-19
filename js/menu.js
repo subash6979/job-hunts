@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (helpSection && !helpSection.querySelector('.support-contact')) {
         const support = document.createElement('div');
         support.className = 'support-contact';
-        support.innerHTML = '<strong>JobHunt Customer Care</strong><a href="mailto:jobhunts12@gmail.com">Email: jobhunts12@gmail.com</a><a href="tel:+9779741706579">Call: +977 9741706579</a><a href="mailto:jobhunts12@gmail.com?subject=JobHunt%20problem%20report">Report a problem by email</a>';
+        support.innerHTML = '<strong>JobHunt Customer Care</strong><a href="mailto:huntsjob9@gmail.com?subject=Job Application">Email: huntsjob9@gmail.com</a><a href="tel:+9779741706478">Call: +977-9741706478</a><a href="mailto:huntsjob9@gmail.com?subject=JobHunt%20problem%20report">Report a problem by email</a>';
         helpSection.appendChild(support);
     }
 

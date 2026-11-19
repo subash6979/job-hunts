@@ -1,4 +1,4 @@
-// Main JavaScript file for JoB HUnts application
+// Main JavaScript file for JobHunts application
 
 // Initialize the application
 document.addEventListener('DOMContentLoaded', function() {

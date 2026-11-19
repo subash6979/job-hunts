@@ -1,6 +1,6 @@
-# JoB HUnts
+# JobHunts
 
-JoB HUnts is an online job portal designed to connect job seekers with employers. This application provides a user-friendly interface for browsing job listings, applying for jobs, and managing user profiles.
+JobHunts is an online job portal designed to connect job seekers with employers. This application provides a user-friendly interface for browsing job listings, applying for jobs, and managing user profiles.
 
 ## Features
 

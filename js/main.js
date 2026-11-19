@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function initApp() {
     // Set up event listeners or any initial setup needed for the application
-    console.log("JoB HUnts application initialized.");
+    console.log("JobHunts application initialized.");
 }
 
 // Utility function to show alerts

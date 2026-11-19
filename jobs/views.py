@@ -12,6 +12,7 @@ from .models import Application, Job, UserSettings
 
 
 def home(request):
+    seed_jobs_from_json()
     return FileResponse((Path(settings.BASE_DIR) / "index.html").open("rb"))
 
 
@@ -235,19 +236,29 @@ def delete_account(request):
 
 
 def seed_jobs_from_json():
-    if Job.objects.exists():
-        return
     data_path = Path(__file__).resolve().parent.parent / "data" / "jobs.json"
     if not data_path.exists():
         return
     with data_path.open(encoding="utf-8") as data_file:
         seed_data = json.load(data_file)
-    Job.objects.bulk_create([
-        Job(
-            title=item["title"], company=item["company"], location=item["location"],
-            description=item["description"],
-            requirements="\n".join(item.get("requirements", [])),
-            salary=item.get("salary", ""), apply_link=item.get("applyLink", ""),
+    for item in seed_data:
+        Job.objects.update_or_create(
+            id=item["id"],
+            defaults={
+                "title": item["title"],
+                "company": item["company"],
+                "location": item["location"],
+                "country": item.get("country", ""),
+                "city": item.get("city", ""),
+                "category": item.get("category", "IT & Technology"),
+                "work_arrangement": item.get("workArrangement", "on-site"),
+                "employment_type": item.get("employmentType", "full-time"),
+                "experience_level": item.get("experienceLevel", "mid-level"),
+                "description": item["description"],
+                "requirements": "\n".join(item.get("requirements", [])),
+                "benefits": "\n".join(item.get("benefits", [])),
+                "salary": item.get("salary", ""),
+                "apply_link": item.get("applyLink", ""),
+                "company_verified": item.get("companyVerified", False),
+            },
         )
-        for item in seed_data
-    ])

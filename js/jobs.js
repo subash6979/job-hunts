@@ -1,4 +1,4 @@
-// JavaScript code for managing job listings in JoB HUnts application
+// JavaScript code for managing job listings in JobHunts application
 
 let allJobs = [];
 let locationCatalog = [];
@@ -66,7 +66,7 @@ function displayJobs(jobs) {
             <p>${job.city ? `${job.city}, ${job.country}` : job.location}</p>
             <p>${job.description}</p>
             <div class="job-meta"><span class="tag">${job.workArrangement || 'On-site'}</span><span class="tag">${job.employmentType || 'Full-time'}</span><span class="tag">${job.salary || 'Salary discussed'}</span></div>
-            <a href="job-details.html?id=${job.id}" class="apply-button">Apply now</a>
+            <a href="apply.html?id=${job.id}" class="apply-button">Apply now</a>
         `;
 
         jobsContainer.appendChild(jobElement);

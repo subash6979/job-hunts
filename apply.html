@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apply for a Job - JobHunts</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><img src="assets/images/logo.svg" alt="JobHunts Logo"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="jobs.html">Jobs</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p class="eyebrow">Job Application</p>
+        <h1>Apply for this position</h1>
+        <p>Fill in your details below. Your application will be sent to the employer and to <strong>huntsjob9@gmail.com</strong>.</p>
+
+        <form id="application-form" action="https://formspree.io/f/mgakzpgq" method="POST" novalidate>
+            <input type="hidden" name="recipient" value="huntsjob9@gmail.com">
+            <input type="hidden" name="job-title" id="form-job-title">
+
+            <div class="form-group">
+                <label for="applicant-name">Full Name <span class="required">*</span></label>
+                <input type="text" id="applicant-name" name="name" required placeholder="Your full name">
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-email">Email Address <span class="required">*</span></label>
+                <input type="email" id="applicant-email" name="email" required placeholder="you@example.com">
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-phone">Phone Number</label>
+                <input type="tel" id="applicant-phone" name="phone" placeholder="+977-XXXXXXXXX">
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-cover-letter">Cover Letter / Message</label>
+                <textarea id="applicant-cover-letter" name="message" rows="5" placeholder="Tell us why you're a great fit for this role."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="applicant-resume">Resume (PDF, DOC, DOCX)</label>
+                <input type="file" id="applicant-resume" name="resume" accept=".pdf,.doc,.docx">
+            </div>
+
+            <div class="form-group form-actions">
+                <button type="submit" class="btn submit-btn">Send Application</button>
+                <button type="button" class="btn mailto-fallback-btn" style="display:none;margin-left:10px">Or send via email</button>
+            </div>
+            <p id="form-status" style="margin-top:12px"></p>
+        </form>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="assets/images/logo.svg" alt="JobHunts Logo" class="footer-logo">
+                <p>Connecting job seekers with verified employers worldwide.</p>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p><a href="mailto:huntsjob9@gmail.com?subject=Job Application" class="contact-link">huntsjob9@gmail.com</a></p>
+                <p><a href="tel:+9779741706478" class="contact-link">+977-9741706478</a></p>
+                <p><a href="https://wa.me/9779741706478" class="contact-link">WhatsApp Chat</a></p>
+            </div>
+            <div class="footer-owners">
+                <h3>Owners</h3>
+                <p>Subash Pant</p>
+                <p>Anil Singh Dhami</p>
+            </div>
+        </div>
+        <p>&copy; 2026 JobHunts. All rights reserved.</p>
+    </footer>
+    <script src="js/menu.js"></script>
+    <script src="js/i18n.js"></script>
+    <script>
+    (function() {
+        const params = new URLSearchParams(window.location.search);
+        const jobId = params.get('id');
+        const jobTitleInput = document.getElementById('form-job-title');
+        const form = document.getElementById('application-form');
+        const status = document.getElementById('form-status');
+
+        if (jobId) {
+            fetch('/api/jobs/')
+                .then(r => r.json())
+                .then(jobs => {
+                    const job = jobs.find(j => String(j.id) === jobId);
+                    if (job && jobTitleInput) {
+                        jobTitleInput.value = job.title;
+                        document.querySelector('h1').textContent = 'Apply for ' + job.title;
+                    }
+                })
+                .catch(() => {});
+        }
+
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const submitBtn = form.querySelector('.submit-btn');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            })
+            .then(response => {
+                if (response.ok) {
+                    status.textContent = 'Application sent successfully!';
+                    status.style.color = '#16a34a';
+                    form.reset();
+                    submitBtn.textContent = 'Send Application';
+                    submitBtn.disabled = false;
+                } else {
+                    throw new Error('Formspree failed');
+                }
+            })
+            .catch(err => {
+                const name = formData.get('name') || '';
+                const email = formData.get('email') || '';
+                const phone = formData.get('phone') || '';
+                const message = formData.get('message') || '';
+                const jobTitle = jobTitleInput ? jobTitleInput.value : 'Job Application';
+
+                const subject = encodeURIComponent('Job Application - ' + jobTitle);
+                const body = encodeURIComponent(
+                    'Name: ' + name + '\n' +
+                    'Email: ' + email + '\n' +
+                    'Phone: ' + phone + '\n' +
+                    'Job: ' + jobTitle + '\n\n' +
+                    'Message:\n' + message
+                );
+
+                status.textContent = 'Opening your email app to send the application...';
+                status.style.color = '#f59e0b';
+                window.location.href = 'mailto:huntsjob9@gmail.com?subject=' + subject + '&body=' + body;
+
+                submitBtn.textContent = 'Send Application';
+                submitBtn.disabled = false;
+            });
+        });
+    })();
+    </script>
+</body>
+</html>

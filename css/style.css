@@ -126,3 +126,30 @@ footer { padding: 28px 20px; text-align: center; color: var(--muted); border-top
 .eyebrow { margin: 0 0 8px; color: var(--coral); font-size: .8rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 @media (max-width: 900px) { .company-list { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 760px) { header nav, nav { align-items: flex-start; flex-direction: column; } main { width: min(100% - 28px, 680px); padding-top: 30px; } .features, .job-listings, .dashboard-grid, .company-list, .menu-hub-grid, .settings-grid { grid-template-columns: 1fr; } .job-search { grid-template-columns: 1fr; } h1 { font-size: 3rem; } }
+
+/* Footer */
+footer { margin-top: 40px; padding: 36px 0 24px; border-top: 1px solid var(--line); background: var(--panel); }
+.footer-content { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 26px; max-width: min(1180px, calc(100% - 40px)); margin: 0 auto 24px; padding: 0 20px; }
+.footer-brand p { color: var(--muted); font-size: 0.95rem; margin-top: 10px; }
+.footer-logo { width: 100px; height: auto; margin-bottom: 10px; }
+.footer-contact h3, .footer-owners h3 { margin: 0 0 10px; font-size: 1rem; }
+.footer-contact p, .footer-owners p { margin: 6px 0; font-size: 0.95rem; color: var(--ink); }
+.contact-link { color: var(--primary); text-decoration: none; font-weight: 700; }
+.contact-link:hover { color: var(--green-dark); text-decoration: underline; }
+.footer-owners p { color: var(--muted); }
+footer > p { text-align: center; color: var(--muted); font-size: 0.85rem; margin-top: 16px; }
+
+/* Application form */
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; margin-bottom: 7px; font-weight: 800; }
+.required { color: var(--danger); }
+.form-actions { display: flex; gap: 10px; align-items: center; margin-top: 6px; }
+#form-status { font-weight: 700; font-size: 0.95rem; }
+
+/* Job listing apply button alignment */
+.job-listing .apply-button { display: inline-block; margin-top: 12px; }
+
+@media (max-width: 760px) {
+    .footer-content { grid-template-columns: 1fr; gap: 18px; }
+    .footer-brand p { font-size: 0.9rem; }
+}
