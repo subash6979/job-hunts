@@ -1,9 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 58" role="img" aria-labelledby="logo-title logo-desc">
-  <title id="logo-title">JobHunt</title>
-  <desc id="logo-desc">JobHunt blue and teal search mark</desc>
-  <rect x="3" y="8" width="42" height="42" rx="12" fill="#1A56DB"/>
-  <path d="M14 25h20M14 32h13" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
-  <circle cx="34" cy="36" r="8" fill="#0F9D9A" stroke="#fff" stroke-width="3"/>
-  <path d="m40 42 5 5" stroke="#0F9D9A" stroke-width="4" stroke-linecap="round"/>
-  <text x="58" y="38" font-family="Poppins, Arial, sans-serif" font-size="29" font-weight="700" fill="#fff">Job<tspan fill="#8BE0DB">Hunt</tspan></text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 58" role="img" aria-labelledby="logo-title logo-desc">
+  <title id="logo-title">Job Hunts</title>
+  <desc id="logo-desc">Job Hunts indeed-style logo with magnifying glass and red person icon</desc>
+
+  <!-- Magnifying glass handle -->
+  <path d="M28 50 Q24 54 18 54 Q12 54 10 50 Q8 48 12 46 L22 38" fill="none" stroke="#1a1a1a" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Magnifying glass outer circle (incomplete with breaks like Indeed) -->
+  <path d="M34 30 A22 22 0 0 1 50 12 A22 22 0 0 1 66 30" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+  <path d="M34 30 A22 22 0 0 0 50 48 A22 22 0 0 0 66 30" fill="none" stroke="#1a1a1a" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Inner circle with breaks -->
+  <path d="M38 26 A16 16 0 0 1 48 18 A16 16 0 0 1 58 26" fill="none" stroke="#d63031" stroke-width="5" stroke-linecap="round"/>
+  <path d="M38 26 A16 16 0 0 0 48 34 A16 16 0 0 0 58 26" fill="none" stroke="#d63031" stroke-width="5" stroke-linecap="round"/>
+
+  <!-- Red person icon inside -->
+  <circle cx="48" cy="27" r="6" fill="#d63031"/>
+  <path d="M48 33 L48 39 M45 36 L51 36" fill="none" stroke="#d63031" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Text: Job Hunts -->
+  <text x="78" y="40" font-family="Poppins, Arial, sans-serif" font-size="26" font-weight="700" fill="#1a1a1a">Job Hunts</text>
 </svg>
