@@ -19,7 +19,12 @@ local_settings.py
 
 # Environment variables
 .env
-.env.local
+.env.*
+!.env.example
+
+# Django collectstatic output
+staticfiles/
+
 
 # OS
 .DS_Store
